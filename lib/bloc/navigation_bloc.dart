@@ -7,7 +7,6 @@ import 'package:irespond_ph/pages/logout.dart';
 import 'package:irespond_ph/pages/myaccountpage.dart';
 import 'package:irespond_ph/pages/reportpage.dart';
 
-
 enum NavigationEvents {
   HomePageClickedEvent,
   MyAccountClickedEvent,

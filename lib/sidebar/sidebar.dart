@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:irespond_ph/bloc/navigation_bloc.dart';
+import 'package:irespond_ph/screens/welcome_screen.dart';
 import 'package:irespond_ph/sidebar/menu_item.dart';
-
 import 'package:rxdart/rxdart.dart';
 
 class SideBar extends StatefulWidget {
@@ -167,9 +168,40 @@ class _SideBarState extends State<SideBar>
                           icon: Icons.exit_to_app,
                           title: "Logout",
                           onTap: () {
-                            onIconPressed();
-                            BlocProvider.of<NavigationBloc>(context)
-                                .add(NavigationEvents.LogoutClickedEvent);
+                            showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return CupertinoAlertDialog(
+                                    title: Text(
+                                      "Logout",
+                                      style:
+                                          TextStyle(color: Colors.deepOrange),
+                                    ),
+                                    content: Text(
+                                        "Do you want to logout this account?"),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text(
+                                          "Yes",
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, WelcomeScreen.id);
+                                        },
+                                      ),
+                                      FlatButton(
+                                        child: Text(
+                                          "Cancel",
+                                          style: TextStyle(color: Colors.blue),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(context).pop(context);
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                });
                           },
                         ),
                       ],
@@ -177,7 +209,7 @@ class _SideBarState extends State<SideBar>
                   ),
                 ),
                 Align(
-                  alignment: Alignment(0, -0.9),
+                  alignment: Alignment(0, -0.8),
                   child: GestureDetector(
                     onTap: () {
                       onIconPressed();

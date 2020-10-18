@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:irespond_ph/pages/donorInformation.dart';
+import 'package:irespond_ph/pages/locationofDisaster.dart';
 
-class DetailsPage extends StatefulWidget {
+class DetailsoftheDisaster extends StatefulWidget {
   final heroTag;
   final foodName;
   final foodPrice;
 
-  DetailsPage({this.heroTag, this.foodName, this.foodPrice});
+  DetailsoftheDisaster({this.heroTag, this.foodName, this.foodPrice});
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _DetailsPageState extends State<DetailsoftheDisaster> {
   int _counter = 1;
 
   increment() {
@@ -42,7 +42,7 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text('Item Information',
+          title: Text('Details of the Disaster',
               style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 25,
@@ -53,7 +53,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 icon: Icon(Icons.arrow_forward_ios),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return DonorInformation();
+                    return LocationoftheDisaster();
                   }));
                 },
                 color: Colors.orange)
@@ -97,65 +97,13 @@ class _DetailsPageState extends State<DetailsPage> {
                   children: <Widget>[
                     SizedBox(height: 20.0),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Text(widget.foodName,
                             style: TextStyle(
                                 fontFamily: 'Montserrat-Bold',
-                                fontSize: 40.0,
+                                fontSize: 30.0,
                                 fontWeight: FontWeight.bold)),
-                        SizedBox(height: 20.0),
-                        Container(
-                          width: 125.0,
-                          height: 40.0,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: Color(0xFFFF9800)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              InkWell(
-                                onTap: decrement,
-                                child: Container(
-                                  height: 25.0,
-                                  width: 25.0,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(7.0),
-                                      color: Color(0xFFFF9800)),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.remove,
-                                      color: Colors.white,
-                                      size: 20.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Text('$_counter',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: 'Montserrat',
-                                      fontSize: 15.0)),
-                              InkWell(
-                                onTap: increment,
-                                child: Container(
-                                  height: 25.0,
-                                  width: 25.0,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(7.0),
-                                      color: Colors.white),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Color(0xFFFF6D00),
-                                      size: 20.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
                       ],
                     ),
                   ],
@@ -173,7 +121,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       maxLines: 10,
                       style: TextStyle(fontSize: 20, color: Colors.black),
                       decoration: InputDecoration(
-                          labelText: 'Item Description',
+                          labelText: 'Message',
                           disabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                             color: Colors.orange,
@@ -181,8 +129,8 @@ class _DetailsPageState extends State<DetailsPage> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30.0))),
                     ),
-                      ),
-                    ]))
+                  ),
+                ]))
           ])
         ]));
   }

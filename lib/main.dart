@@ -21,11 +21,8 @@ class irespond_ph extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: Colors.white
-      ),
+          scaffoldBackgroundColor: Colors.white, primaryColor: Colors.white),
       home: SideBarLayout(),
-
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:irespond_ph/bloc/navigation_bloc.dart';
 import 'package:irespond_ph/screens/login_screen.dart';
 import 'package:irespond_ph/screens/registration_screen.dart';
 
 
-class WelcomeScreen extends StatefulWidget {
+class WelcomeScreen extends StatefulWidget with NavigationStates {
   static String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }

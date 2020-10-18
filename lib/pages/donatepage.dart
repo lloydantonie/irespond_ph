@@ -24,22 +24,9 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Color(0xFFFFECB3),
       body: ListView(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: 15.0, left: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  color: Colors.white,
-                  onPressed: () {},
-                ),
-              ],
-            ),
-          ),
           SizedBox(height: 10.0),
           Padding(
-            padding: EdgeInsets.only(left: 40.0),
+            padding: EdgeInsets.only(left: 90.0),
             child: Row(
               children: <Widget>[
                 Text('DONATE',
@@ -56,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: MediaQuery.of(context).size.height - 100.0,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0)),
+              borderRadius: BorderRadius.only(topRight: Radius.circular(75.0)),
             ),
             child: ListView(
               primary: false,
@@ -95,28 +82,24 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 Container(
                     child: Row(children: [
-                      Hero(
-                          tag: imgPath,
-                          child: Image(
-                              image: AssetImage(imgPath),
-                              fit: BoxFit.cover,
-                              height: 75.0,
-                              width: 75.0)),
-                      SizedBox(width: 10.0),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(foodName,
-                                style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 17.0,
-                                    fontWeight: FontWeight.bold)),
-                          ])
-                    ])),
-                IconButton(
-                    icon: Icon(Icons.add),
-                    color: Colors.black,
-                    onPressed: () {})
+                  Hero(
+                      tag: imgPath,
+                      child: Image(
+                          image: AssetImage(imgPath),
+                          fit: BoxFit.cover,
+                          height: 95.0,
+                          width: 95.0)),
+                  SizedBox(width: 30.0),
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(foodName,
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.bold)),
+                      ])
+                ])),
               ],
             )));
   }
